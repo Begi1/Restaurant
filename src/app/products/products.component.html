@@ -1,0 +1,56 @@
+<div class="productsback">
+    <div class="products">
+        <h1 class="productsTitle">Categories</h1>
+        <div class="categories">
+            <h3 class="category" (click)="selectCategory(0)">All</h3>
+            <h3 *ngFor="let item of categoriesArray" class="category" (click)="selectCategory(item.id)">{{item.name}}</h3>
+        </div>
+        <div class="d-flex">
+            <div class="filter">
+                <div class="filterHeadline">
+                    <h4>Filter</h4>
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M3.9 54.9C10.5 40.9 24.5 32 40 32H472c15.5 0 29.5 8.9 36.1 22.9s4.6 30.5-5.2 42.5L320 320.9V448c0 12.1-6.8 23.2-17.7 28.6s-23.8 4.3-33.5-3l-64-48c-8.1-6-12.8-15.5-12.8-25.6V320.9L9 97.3C-.7 85.4-2.8 68.8 3.9 54.9z"/></svg>
+                </div>
+                <div class="spicinessFilter">
+                    <label>Spiciness: {{Spiciness}}</label>
+                    <input type="range" min="0" max="5" value="0" (change)="spiciness($event)">
+                </div>
+                <div class="filterCheckBox">
+                    <input type="checkbox" (change)="nuts()">
+                    <label>No Nuts</label>
+                </div>
+                <div>
+                    <input type="checkbox" (change)="veg()">
+                    <label>Vegeterian only</label>
+                </div>
+                <button class="filterButton" (click)="reset()">RESET</button>
+                <button class="filterButton" (click)="filter()">APPLEY FILTER</button>
+            </div>
+            <div class="productsArea">
+                <div *ngFor="let item of filteredCategory" class="product">
+                    <div class="productImgBack">
+                        <img [src]="item.image" class="productImg">
+                    </div>
+                    <div>
+                        <h2 class="productName">{{item.name}}</h2>
+                        <p class="productSpiciness">Spiciness:{{item.spiciness}}</p>
+                        <div class="productNV">
+                            <div class="d-flex">
+                                <input type="checkbox" [checked]="item.nuts" disabled/>
+                                <div class="productNVN">Nuts</div>
+                            </div>
+                            <div class="d-flex">
+                                <input type="checkbox" [checked]="item.vegeterian" disabled/>
+                                <div class="productNVN">Vegeterian</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productPriceATC">
+                        <h2 >$ {{item.price}}</h2>
+                        <button class="productATC" (click)="addProduct(item)">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

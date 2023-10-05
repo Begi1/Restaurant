@@ -1,0 +1,90 @@
+ul {
+    list-style-type: none
+}
+
+.CP {
+    cursor: pointer;
+}
+
+.cart {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket {
+    margin-top: 50px;
+    width: 1200px;
+}
+
+.basketHead {
+    padding: 24px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #f3f3f3;
+}
+
+.basketItem {
+    display: flex;
+}
+
+.basketEdit {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.basketProductIN {
+    display: flex;
+    width: 350px;
+}
+
+.basketImage {
+    height: 100px;
+    width: 100px;
+}
+
+.basketQty {
+    margin-left: 70px;
+    margin-top: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+.basketPrice {
+    margin-left: 280px;
+    margin-top: 20px;
+    width: 20px;
+}
+
+.totalPrice {
+    margin-top: 20px;
+    margin-left: 300px;
+}
+
+.Price {
+    height: 30px;
+    width: 100px;
+    margin-left: auto;
+}
+
+.checkout {
+    height: 50px;
+    width: 200px;
+    margin-left: auto;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout:hover {
+    background-color: orange;
+    cursor: pointer;
+}
